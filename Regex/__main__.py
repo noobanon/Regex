@@ -6,7 +6,7 @@ from telegram import Message, Chat, Update, Bot, User
 from telegram.ext.dispatcher import run_async, DispatcherHandlerStop, Dispatcher
 from telegram.ext import CommandHandler
 from Regix import dispatcher as dp
-from Regix Import TOKEN
+from Regix import TOKEN
 from Regix.regix import regix_load
 
 IMPORTED = {}
