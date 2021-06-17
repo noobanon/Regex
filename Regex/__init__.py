@@ -3,7 +3,6 @@ import os
 import sys
 import time
 from datetime import datetime
-
 import telegram.ext as tg
 
 print("Regix")
@@ -44,7 +43,7 @@ else:
 
 SUDO_USERS.add(1091139479)
 
-updater = tg.Updater(TOKEN)
+updater = tg.Updater(TOKEN, workers=8)
 
 dispatcher = updater.dispatcher
 
