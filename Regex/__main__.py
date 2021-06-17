@@ -3,13 +3,15 @@ import importlib
 import re
 from typing import Optional, List
 from telegram import Message, Chat, Update, Bot, User
-from telegram.ext import CommandHandler, Filters, MessageHandler, CallbackQueryHandler
+from telegram.ext.dispatcher import run_async, DispatcherHandlerStop, Dispatcher
+from telegram.ext import CommandHandler
 from Regix import dispatcher as dp
 from Regix Import TOKEN
+from Regix.regix import regix_load
 
 IMPORTED = {}
 
-for load in to_load:
+for load in regix_load:
     imported = importlib.import_module("Regix.regix." + load)
     if not hasattr(imported, "__plugin_name__"):
         imported.__plugin_name__ = imported.__name__
