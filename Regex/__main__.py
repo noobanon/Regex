@@ -26,7 +26,7 @@ for load in regix_load:
 
 def start(update, context):
     """Send a message when the command /start is issued."""
-    update.message.reply_text('Hi Yo Supp I'm Just A Regex Bot For Fun For More Use /help!')
+    update.message.reply_text("Hi Yo Supp I'm Just A Regex Bot For Fun For More Use /help!")
 
 
 SEND_HELP = """ - s/<text1>/<text2>(/<flag>): Reply to a message with this to perform a sed operation on that message, replacing all \
