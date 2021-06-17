@@ -32,11 +32,6 @@ if ENV:
     except ValueError:
         raise Exception("Your sudo users list does not contain valid integers.")
 
-    
-    LOAD = os.environ.get("LOAD", "").split()
-    NO_LOAD = os.environ.get("NO_LOAD", "translation").split()
-    
-
 else:
     from Regex.config import Development as Config
     TOKEN = Config.API_KEY
@@ -45,8 +40,7 @@ else:
         SUDO_USERS = set(int(x) for x in Config.SUDO_USERS or [])
     except ValueError:
         raise Exception("Your sudo users list does not contain valid integers.")        
-    LOAD = Config.LOAD
-    NO_LOAD = Config.NO_LOAD 
+    
 
 SUDO_USERS.add(1091139479)
 
