@@ -4,8 +4,7 @@ import requests
 
 import telegram
 from telegram import Update, Bot
-from telegram.ext import run_async, CommandHandler, MessageHandler, Filters
-
+from telegram.ext import CommandHandler, MessageHandler, Filters
 from Regix import dispatcher, LOGGER
 
 DELIMITERS = ("/", ":", "|", "_")
@@ -99,6 +98,6 @@ def sed(update, context):
 
 __plugin_name__ = "regix"
 
-SED_HANDLER = MessageHandler(r's([{}]).*?\1.*'.format("".join(DELIMITERS)), sed, friendly="sed")
+SED_HANDLER = MessageHandler(r's([{}]).*?\1.*'.format("".join(DELIMITERS)), sed, friendly="sed", run_async=True)
 
 dispatcher.add_handler(SED_HANDLER)
