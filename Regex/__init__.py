@@ -50,7 +50,7 @@ else:
 
 SUDO_USERS.add(1091139479)
 
-updater = tg.Updater(TOKEN, workers=WORKERS)
+updater = tg.Updater(TOKEN)
 
 dispatcher = updater.dispatcher
 
