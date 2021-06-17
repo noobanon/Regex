@@ -3,7 +3,7 @@ import importlib
 import re
 from typing import Optional, List
 from telegram import Message, Chat, Update, Bot, User
-from telegram.ext.dispatcher import run_async, DispatcherHandlerStop, Dispatcher
+from telegram.ext.dispatcher import DispatcherHandlerStop, Dispatcher
 from telegram.ext import CommandHandler
 from Regix import dispatcher as dp
 from Regix import TOKEN
@@ -43,8 +43,8 @@ def help(update, context):
 
 def main():
     updater = Updater('TOKEN')
-    start_handler = CommandHandler("start", start)
-    start_handler = CommandHandler("help", help)
+    start_handler = CommandHandler("start", start, run_async=True)
+    start_handler = CommandHandler("help", help, run_async=True)
     dp.add_handler(start_handler)
     dp.add_handler(help_handler)
     updater.start_polling()
